@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everyone Flies</title>
+<meta name="description" content="On 3 December 2026, 100 differently abled children will take the indoor skydiving challenge at GravityZip, Hyderabad.">
+<meta property="og:title" content="Everyone Flies">
+<meta property="og:description" content="100 differently abled kids will take the indoor skydiving challenge on 3 December 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Plan: a deep navy and royal blue base on warm cream, in scuba-suit colours: red, tennis-ball yellow and royal blue on navy. One bold move: huge condensed type, a rising-wind texture in the hero, and a full-screen finale over clouds. */
+:root{
+  --navy:#0B1F4D;
+  --blue:#1F3BD6;
+  --red:#E8202E;
+  --tennis:#D7F533;
+  --cream:#FFF4E0;
+  --muted:#46557F;
+  --on-navy:rgba(255,244,224,.88);
+  --display:'Big Shoulders Display','Anton','Oswald',Impact,'Arial Narrow',sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;background:var(--navy)}
+body{background:var(--cream);color:var(--navy);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tennis);outline-offset:3px}
+section[id]{scroll-margin-top:64px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:max(16px,4vw)}
+.mono{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.92;text-wrap:balance}
+h2{font-size:clamp(2.5rem,6.4vw,5.6rem);letter-spacing:.005em}
+h3{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1}
+p{max-width:62ch}
+.band{padding-block:clamp(64px,10vw,140px)}
+.eyebrow{display:block;margin-bottom:20px}
+
+/* section colours */
+.on-blue{background:var(--blue);color:var(--cream)}
+.on-navy{background:var(--navy);color:var(--cream)}
+.on-blue p,.on-navy p{color:var(--on-navy)}
+
+/* buttons */
+.btn{display:inline-block;font-family:var(--mono);font-weight:500;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border:2px solid currentColor;transition:transform .15s ease,background .15s ease,color .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-fill{background:var(--red);border-color:var(--red);color:#fff}
+.btn-fill:hover{background:var(--cream);border-color:var(--cream);color:var(--navy)}
+.btn-navy{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.btn-navy:hover{background:var(--blue);border-color:var(--blue)}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:rgba(11,31,77,.95);backdrop-filter:blur(8px);color:var(--cream)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-family:var(--display);font-weight:900;font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.logo b{color:var(--tennis);font-weight:900}
+.bar nav{display:none;gap:24px}
+.bar nav a{text-decoration:none;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.bar nav a:hover{opacity:1;color:var(--tennis)}
+.bar .btn{padding:9px 16px;font-size:.74rem}
+@media(min-width:960px){.bar nav{display:flex}}
+
+/* hero */
+.hero{position:relative;background:var(--navy);color:var(--cream);overflow:hidden;padding-block:clamp(48px,8vw,120px) clamp(72px,9vw,128px)}
+.hero-bg{position:absolute;inset:0;background:url("flyer.jpg") center 28%/cover no-repeat;transform:scaleX(-1)}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,31,77,.96) 0,rgba(11,31,77,.88) 38%,rgba(11,31,77,.3) 68%,rgba(11,31,77,.06) 100%)}
+.hero .wrap{position:relative}
+.hero .copy{max-width:760px}
+.hero h1{font-size:clamp(4.4rem,22vw,7.5rem);letter-spacing:.005em}
+.hero h1 span{display:block}
+.hero h1 .fl{color:var(--tennis)}
+.hero .lede{font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.55;margin-top:28px;color:var(--cream)}
+.hero .when{margin-top:26px;color:var(--tennis)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .cta .btn-line{color:var(--cream)}
+.hero .cta .btn-line:hover{background:var(--cream);color:var(--navy)}
+.hero .credit{position:absolute;right:max(16px,4vw);bottom:18px;color:rgba(255,244,224,.8);font-size:.68rem;text-align:right}
+@media(min-width:900px){.hero h1{font-size:clamp(6.2rem,12.5vw,12rem)}}
+@media(max-width:899px){
+  .hero{padding-top:calc(58vw + 24px)}
+  .hero-bg{background-size:100% auto;background-position:center top}
+  .hero-shade{background:linear-gradient(180deg,rgba(11,31,77,0) 0,rgba(11,31,77,0) 24vw,rgba(11,31,77,.9) 50vw,var(--navy) 62vw)}
+}
+
+/* the idea */
+.idea .top{display:grid;gap:36px}
+.idea h2{font-size:clamp(2.4rem,6vw,5.4rem)}
+.idea h2 em{font-style:normal;color:var(--navy);background:var(--tennis);padding:0 .1em}
+.idea .copy p+p{margin-top:18px}
+@media(min-width:900px){.idea .top{grid-template-columns:1.15fr .85fr;gap:64px;align-items:end}}
+.quote{margin-top:clamp(48px,7vw,88px);padding-top:clamp(28px,4vw,44px);border-top:3px solid var(--navy)}
+.quote q{display:block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2.2rem,6vw,5rem);line-height:.95;quotes:none;max-width:20ch}
+.quote q::before,.quote q::after{content:""}
+.quote p{margin-top:22px;color:var(--navy);font-size:1.15rem;max-width:64ch}
+.stats{display:grid;gap:34px;margin-top:clamp(48px,7vw,88px)}
+.stat b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(4.4rem,11vw,8.6rem);line-height:.85;color:var(--blue)}
+.stat p{margin-top:12px;color:var(--muted);max-width:30ch}
+.stat a{color:var(--navy)}
+@media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr);gap:44px}}
+
+/* the sport */
+.sport .top{display:grid;gap:32px}
+.sport h2{max-width:11ch}
+.sport .eyebrow{color:var(--cream)}
+.sport .copy p{font-size:1.12rem}
+.sport .copy p+p{margin-top:18px}
+@media(min-width:900px){.sport .top{grid-template-columns:1fr 1fr;gap:64px;align-items:end}}
+.facts{display:grid;gap:30px;margin-top:clamp(40px,6vw,72px)}
+.fact{border-top:4px solid var(--tennis);padding-top:20px}
+.fact h3{margin-bottom:10px}
+@media(min-width:800px){.facts{grid-template-columns:repeat(3,1fr);gap:44px}}
+
+/* the day */
+.day h2{max-width:14ch}
+.day .eyebrow{color:var(--tennis)}
+.steps{display:grid;gap:16px;margin-top:clamp(36px,5vw,64px);list-style:none;padding:0}
+.steps li{background:var(--cream);color:var(--navy);padding:26px 24px 30px;border-top:6px solid var(--tennis)}
+.steps li .mono{color:var(--muted);display:block;margin-bottom:12px}
+.steps h3{margin-bottom:12px}
+.steps p{font-size:1rem;line-height:1.55;color:var(--navy)}
+@media(min-width:700px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.steps{grid-template-columns:repeat(5,1fr)}}
+
+/* why */
+.why h2{max-width:13ch}
+.why .label{color:var(--muted)}
+.reasons{display:grid;gap:40px 56px;margin-top:clamp(36px,5vw,64px)}
+.reasons div{border-top:6px solid var(--blue);padding-top:20px}
+.reasons h3{margin-bottom:12px}
+.reasons a{text-underline-offset:3px}
+@media(min-width:800px){.reasons{grid-template-columns:repeat(2,1fr)}}
+
+/* safety */
+.safety h2{max-width:16ch}
+.safety h2 em{font-style:normal;color:var(--tennis)}
+.safety .eyebrow{color:var(--cream)}
+.checks{display:grid;gap:22px 56px;margin-top:clamp(36px,5vw,64px);list-style:none;padding:0}
+.checks li{position:relative;padding-left:34px;color:var(--on-navy)}
+.checks li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;background:var(--tennis)}
+.checks b{color:var(--cream)}
+@media(min-width:800px){.checks{grid-template-columns:repeat(2,1fr)}}
+
+/* people */
+.crew .label,.partners .label{color:var(--muted)}
+.council .label{color:var(--tennis)}
+.people{display:grid;gap:20px;margin-top:clamp(36px,5vw,64px)}
+.person{display:grid;grid-template-columns:96px 1fr;gap:22px;background:var(--navy);color:var(--cream);padding:26px}
+.person p{color:var(--on-navy)}
+.person .mark{width:96px;height:96px;display:grid;place-items:center;background:var(--tennis);color:var(--navy);font-family:var(--display);font-weight:900;font-size:2.4rem;line-height:1}
+.person h3{font-size:clamp(1.6rem,2.4vw,2rem);margin-bottom:2px}
+.person .role{color:var(--tennis);display:block;margin-bottom:12px}
+.person p{font-size:.98rem;line-height:1.58}
+.person a{text-underline-offset:3px}
+.council .person{background:var(--cream);color:var(--navy)}
+.council .person p{color:var(--navy)}
+.council .person .role{color:var(--blue)}
+.person.open{background:transparent;border:3px dashed currentColor;color:var(--navy)}
+.person.open p{color:var(--navy)}
+.person.open .mark{background:transparent;border:3px dashed currentColor;color:inherit}
+.person.open .role{color:var(--muted)}
+.council .person.open{background:transparent;color:var(--cream)}
+.council .person.open p{color:var(--on-navy)}
+.council .person.open .role{color:var(--tennis)}
+@media(min-width:900px){.people{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.person{grid-template-columns:1fr}}
+
+/* partners */
+.onboard{display:grid;gap:20px;margin-top:clamp(36px,5vw,64px)}
+.partner{background:var(--navy);color:var(--cream);padding:30px 28px 34px}
+.partner h3{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--tennis);margin-bottom:12px}
+.partner p{color:var(--on-navy);font-size:1rem}
+@media(min-width:800px){.onboard{grid-template-columns:repeat(2,1fr)}}
+.tbd{display:grid;place-items:center;text-align:center;border:3px dashed var(--navy);padding:28px 20px;min-height:150px;color:var(--navy)}
+.tbd .mono{max-width:20ch;line-height:1.5}
+.tbd.big{min-height:230px;margin-top:20px;background:rgba(31,59,214,.09)}
+.tbd.big strong{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2rem,4vw,3.2rem);line-height:1;display:block;margin-bottom:8px}
+.slots{display:grid;gap:20px;margin-top:20px}
+@media(min-width:700px){.slots{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.slots{grid-template-columns:repeat(4,1fr)}}
+.partners .after{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:clamp(32px,4vw,52px)}
+
+/* join */
+.join h2{max-width:15ch}
+.join .eyebrow{color:var(--cream)}
+.ways{display:grid;gap:20px;margin-top:clamp(36px,5vw,64px)}
+.way{background:var(--navy);color:var(--cream);padding:30px 28px 34px}
+.way h3{color:var(--tennis);margin-bottom:12px}
+.way p{color:var(--on-navy);font-size:1rem}
+@media(min-width:900px){.ways{grid-template-columns:repeat(3,1fr)}}
+.contact{margin-top:clamp(32px,4vw,52px);font-size:1.15rem;font-weight:600;color:var(--cream)}
+.contact a{text-underline-offset:4px}
+
+/* finale */
+.finale{position:relative;background:var(--navy) url("clouds.jpg") center/cover no-repeat;color:#fff;display:grid;align-items:center;min-height:92vh;padding-block:clamp(72px,12vw,160px);overflow:hidden}
+.finale::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,31,77,.74),rgba(11,31,77,.6))}
+.finale .wrap{position:relative;width:100%}
+.finale h2{font-size:clamp(5rem,24vw,23rem);line-height:.96;letter-spacing:.005em}
+.finale h2 span{display:block}
+.finale h2 .fly{color:var(--tennis)}
+.finale p{margin-top:clamp(28px,4vw,48px);font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--cream);max-width:46ch}
+.finale .btn{margin-top:30px}
+
+/* footer */
+footer{background:var(--blue);color:rgba(255,244,224,.8);padding-block:clamp(96px,14vw,200px) clamp(40px,5vw,64px);font-size:.85rem}
+footer .wrap{display:grid;gap:clamp(96px,14vw,200px)}
+footer .logo{color:var(--cream);font-size:clamp(3.6rem,12vw,10rem);line-height:.9;letter-spacing:.01em}
+footer p{max-width:70ch;line-height:1.6}
+footer a{color:var(--cream);text-underline-offset:3px}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top">Everyone <b>Flies</b></a>
+    <nav aria-label="Sections">
+      <a href="#sport">The sport</a>
+      <a href="#day">The day</a>
+      <a href="#safety">Safety</a>
+      <a href="#crew">Ground Crew</a>
+      <a href="#council">Flight Council</a>
+      <a href="#partners">Partners</a>
+    </nav>
+    <a class="btn btn-fill" href="#join">Get involved</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-bg" role="img" aria-label="A smiling child in an orange flight suit and helmet flies in a wind tunnel while an instructor in a navy suit holds their arm."></div>
+  <div class="hero-shade"></div>
+  <div class="wrap">
+    <div class="copy">
+      <span class="mono eyebrow" style="color:var(--tennis)">International Day of Persons with Disabilities</span>
+      <h1><span>Everyone</span><span class="fl">Flies</span></h1>
+      <p class="lede">On 3 December 2026, 100 differently abled children will fly in a wind tunnel in Hyderabad, and for many of them it will be the first time they discover that their body can fly.</p>
+      <p class="mono when">3 December 2026 &nbsp;·&nbsp; GravityZip wind tunnel &nbsp;·&nbsp; Hyderabad, Telangana</p>
+      <div class="cta">
+        <a class="btn btn-fill" href="#join">Get involved</a>
+        <a class="btn btn-line" href="#day">See how the day works</a>
+      </div>
+    </div>
+  </div>
+  <p class="mono credit">Image created with Midjourney</p>
+</section>
+
+<section class="idea band">
+  <div class="wrap">
+    <div class="top">
+      <h2><em>100</em> differently abled kids are about to take flight.</h2>
+      <div class="copy">
+        <p>Each child will be held safely in the air by certified instructors inside a vertical wind tunnel at GravityZip. A wind tunnel is a safe, controlled place where anyone can try indoor skydiving, and in the air the wind holds the body up, not the legs, the arms or a wheelchair, so for a few minutes each child feels weightless and free and learns to move in a new element.</p>
+        <p>The children are chosen together with special schools, rehabilitation centres and organisations that work with them, and each child comes with a parent, teacher or caregiver. During the day they will also meet amputee skydivers and other people who have achieved the impossible, and hear their stories.</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <q>Made to fly, in every way</q>
+      <p>Some things change how you see yourself, and flying is one of them. At Everyone Flies, young people of all abilities step into the wind tunnel and fly, many for the first time. They're supported by expert instructors, but the flight is theirs. We hope each child walks out with a new sense of their own power, and the confidence to go after whatever they dream of.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>100</b><p>differently abled children will fly on 3 December 2026.</p></div>
+      <div class="stat"><b>1,100+</b><p>people with disabilities have flown in wind tunnels across Europe through Windtunnel Handifly.</p></div>
+      <div class="stat"><b>88%</b><p>of Handifly participants rated the experience very positive in the programme's <a href="https://www.ffp.asso.fr/wp-content/uploads/2022/06/S.-Ferrerova-Evaluation-of-the-first-part-of-WH-project.pdf" target="_blank" rel="noopener">2022 evaluation</a>.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sport on-blue band" id="sport">
+  <div class="wrap">
+    <span class="mono eyebrow">The sport</span>
+    <div class="top">
+      <h2>What is indoor skydiving?</h2>
+      <div class="copy">
+        <p>Indoor skydiving, also called bodyflight, lets you feel the freefall of a skydive without a jump or a parachute. A powerful fan pushes air upward through an enclosed vertical tunnel, and a person lying on that stream of air is lifted off the floor and floats in the wind.</p>
+        <p>The sport began as a way for skydivers to train and has grown into a discipline of its own, enjoyed by children, adults and people of every ability.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div class="fact"><h3>No jump, no parachute</h3><p>Everything happens inside a controlled tunnel where the wind does the lifting, so there is no height to fear and no equipment to manage in the air.</p></div>
+      <div class="fact"><h3>An instructor stays close</h3><p>Instructors hold beginners steady and show them how to relax into the air, while an operator at the console sets the wind speed for each flyer.</p></div>
+      <div class="fact"><h3>Anyone can fly</h3><p>Because the wind holds the body up, people with many different abilities can fly, which is what Windtunnel Handifly has shown across Europe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="day on-navy band" id="day">
+  <div class="wrap">
+    <span class="mono eyebrow">The day</span>
+    <h2>Every child gets a day made for them.</h2>
+    <ol class="steps">
+      <li><span class="mono">Arrive</span><h3>Come with someone you know</h3><p>Each child arrives with a parent, teacher or caregiver, and accessible transport is arranged for children who use wheelchairs.</p></li>
+      <li><span class="mono">Prepare</span><h3>Get briefed and fitted</h3><p>A 15-minute briefing and properly fitted gear help every child feel ready before the first flight.</p></li>
+      <li><span class="mono">Fly</span><h3>Take the flight</h3><p>One or two certified instructors hold each child safely in the air while an operator controls the fan speed.</p></li>
+      <li><span class="mono">Meet</span><h3>Meet people who did the impossible</h3><p>The children talk with amputee skydivers and others who have achieved the impossible, and a simple talk explains how the tunnel works.</p></li>
+      <li><span class="mono">Keep</span><h3>Go home with a keepsake</h3><p>Every child leaves with a flight certificate, an embossed wristband, photos and a short clip of their flight.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="why band" id="why">
+  <div class="wrap">
+    <span class="mono eyebrow label">Why it matters</span>
+    <h2>A day of flying that changes how a child sees their body.</h2>
+    <div class="reasons">
+      <div><h3>It marks 3 December with joy</h3><p>Everyone Flies gives the International Day of Persons with Disabilities a moment of joy and achievement that children, families and the public will remember.</p></div>
+      <div><h3>It brings accessible sport to life</h3><p>Everyone Flies puts the Rights of Persons with Disabilities Act, 2016 into practice, in the spirit of Section 30, which encourages the participation of persons with disabilities in sport and the organisation of disability-specific sporting events.</p></div>
+      <div><h3>It follows a proven model</h3><p>Windtunnel Handifly, led by the French Parachuting Federation with EU Erasmus+ support, has brought more than 1,100 people with disabilities into wind tunnels across Europe. In its <a href="https://www.ffp.asso.fr/wp-content/uploads/2022/06/S.-Ferrerova-Evaluation-of-the-first-part-of-WH-project.pdf" target="_blank" rel="noopener">evaluation</a>, 88% of participants rated the experience very positive, and 63% of first-time flyers had not known that tunnel flying was open to people with disabilities.</p></div>
+      <div><h3>It builds confidence and community</h3><p>Children discover what they can do and meet amputee skydivers and people who have achieved the impossible, families and teachers share the day, and the public sees differently abled children as flyers.</p></div>
+      <div><h3>It is a pilot program built to become a yearly event</h3><p>With the right support, Everyone Flies can grow into a model for inclusive adventure sport at wind tunnels across the country.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="safety on-blue band" id="safety">
+  <div class="wrap">
+    <span class="mono eyebrow">Safety and care</span>
+    <h2>Every child is cared for <em>from the first briefing to the last flight.</em></h2>
+    <ul class="checks">
+      <li><b>Certified tunnel instructors</b> who are qualified to train people to fly, and one of them has coached an amputee to fly.</li>
+      <li><b>One or two instructors per child</b>, depending on the child, and always two instructors to help each child enter the tunnel.</li>
+      <li><b>An operator at the console at all times</b>, controlling the fan speed throughout the day.</li>
+      <li><b>Doctor screening for every child</b> before the day, guided by the Windtunnel Handifly list of accepted impairments, with the tunnel and the doctor making the final decision.</li>
+      <li><b>A 15-minute briefing</b> and properly fitted gear for each child.</li>
+      <li><b>A doctor or physio on site</b>, with a nearby hospital notified and on standby.</li>
+      <li><b>Accessible transport and transfers</b> for children who use wheelchairs.</li>
+      <li><b>Consent and dignity</b>, with written consent from every parent or guardian, and photos and videos taken with respect and shared in ways that honour each child.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="crew band" id="crew">
+  <div class="wrap">
+    <span class="mono eyebrow label">Organising committee</span>
+    <h2>The Ground Crew</h2>
+    <div class="people">
+      <article class="person">
+        <div class="mark" aria-hidden="true">RG</div>
+        <div>
+          <h3>Rebecca Girigalla</h3>
+          <span class="mono role">Founder</span>
+          <p>Rebecca founded Everyone Flies and leads the pilot plan, coordination, partnerships, back office and media from Hyderabad, Telangana.</p>
+        </div>
+      </article>
+      <article class="person">
+        <div class="mark" aria-hidden="true">SK</div>
+        <div>
+          <h3>Syam Kumar S.S. (Shyam)</h3>
+          <span class="mono role">Speaker and organiser</span>
+          <p>Shyam is an amputee skydiver and paragliding pilot. He entered the <a href="https://www.internationalbookofrecords.com/records/youngest-to-do-solo-skydiving-from-highest-altitude-with-prosthetic-leg/" target="_blank" rel="noopener">International Book of Records</a> as the youngest person to complete a solo skydive from the highest altitude with a prosthetic leg, jumping from 13,000 feet.</p>
+        </div>
+      </article>
+      <article class="person open">
+        <div class="mark" aria-hidden="true">+</div>
+        <div>
+          <h3>Volunteer crew</h3>
+          <span class="mono role">To be announced</span>
+          <p>Students and professionals will join the Ground Crew on the day, and you can <a href="#join">sign up to help</a>.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="council on-navy band" id="council">
+  <div class="wrap">
+    <span class="mono eyebrow label">Advisory board</span>
+    <h2>The Flight Council</h2>
+    <div class="people">
+      <article class="person">
+        <div class="mark" aria-hidden="true">FFP</div>
+        <div>
+          <h3>Windtunnel Handifly</h3>
+          <span class="mono role">French Parachuting Federation</span>
+          <p>Windtunnel Handifly is Europe's wind tunnel programme for people with disabilities, led by the French Parachuting Federation (FFP) and running since 2016. It guides our plan with the experience of more than 1,100 flyers.</p>
+        </div>
+      </article>
+      <article class="person">
+        <div class="mark" aria-hidden="true">BS</div>
+        <div>
+          <h3>Brig. Saurabh Singh Shekhawat</h3>
+          <span class="mono role">KC, SC, SM, VSM · Advisor on planning, safety and coordination</span>
+          <p>A former Indian Army officer and military free-fall instructor, he served 30 years in the military and is now Chief Instructor and mentor at Skyhigh India, where he leads civilian skydiving training and operations. He has made more than 4,000 tandem jumps and holds FAA Senior Parachute Rigger credentials.</p>
+        </div>
+      </article>
+      <article class="person open">
+        <div class="mark" aria-hidden="true">+</div>
+        <div>
+          <h3>Advisor</h3>
+          <span class="mono role">To be announced</span>
+          <p>We are inviting more advisors from sport, disability and medical care to join the Flight Council.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="partners band" id="partners">
+  <div class="wrap">
+    <span class="mono eyebrow label">Sponsors and partners</span>
+    <h2>Our Tailwind Partners</h2>
+    <div class="onboard">
+      <div class="partner"><h3>GravityZip</h3><p>GravityZip hosts the day at its wind tunnel in Hyderabad, with the venue and facilities free of charge and a reduced tunnel price for every child.</p></div>
+      <div class="partner"><h3>Windtunnel Handifly</h3><p>The French Parachuting Federation's programme shares its guidance and resources with us and has allowed us to use the Handifly logo.</p></div>
+    </div>
+    <div class="tbd big"><div><strong>Principal Supporter</strong><span class="mono">To be announced</span></div></div>
+    <div class="slots">
+      <div class="tbd"><span class="mono">Sponsor to be announced</span></div>
+      <div class="tbd"><span class="mono">Sponsor to be announced</span></div>
+      <div class="tbd"><span class="mono">Sponsor to be announced</span></div>
+      <div class="tbd"><span class="mono">Sponsor to be announced</span></div>
+    </div>
+    <div class="after">
+      <p>More sponsors are finalising their offers, and we will announce each of them here as it is confirmed.</p>
+      <a class="btn btn-navy" href="#join">Become a Tailwind Partner</a>
+    </div>
+  </div>
+</section>
+
+<section class="join on-blue band" id="join">
+  <div class="wrap">
+    <span class="mono eyebrow">Get involved</span>
+    <h2>Help us lift 100 children into the air.</h2>
+    <div class="ways">
+      <div class="way"><h3>Volunteer</h3><p>Students and professionals are welcome to join the Ground Crew on the day, and we especially need people for general crew, photography, social media and video.</p></div>
+      <div class="way"><h3>Special schools and rehabilitation centres</h3><p>We invite children directly through the special schools, rehabilitation centres and organisations that work with them, so there is no public sign-up. If you work with children who would love to fly, please write to us.</p></div>
+      <div class="way"><h3>Sponsors and press</h3><p>Sponsors can fund a child's flight and share in the story of the day, and journalists are welcome to ask for the press note and for access on 3 December.</p></div>
+    </div>
+    <p class="contact">Write to us at <a href="mailto:flying@proj-neptune.com">flying@proj-neptune.com</a></p>
+  </div>
+</section>
+
+<section class="finale" aria-label="You were made to fly">
+  <div class="wrap">
+    <h2><span>You were</span><span>made to</span><span class="fly">fly.</span></h2>
+    <p>Join us on 3 December 2026 at GravityZip in Hyderabad, and help every child find out what their body can do.</p>
+    <a class="btn btn-fill" href="#join">Get involved</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top">Everyone <b>Flies</b></a>
+    <p>Photo of clouds by <a href="https://unsplash.com/@taylorvanriper925?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Taylor Van Riper</a> on <a href="https://unsplash.com/photos/above-cloud-photo-of-blue-skies-yQorCngxzwI?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>. The flying image was created with Midjourney.</p>
+  </div>
+</footer>
+
+</body>
+</html>
