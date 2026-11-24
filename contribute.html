@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contribute to Everyone Flies</title>
+<meta name="description" content="Give to Everyone Flies and help 100 young people fly in a wind tunnel on 3 December 2026.">
+<meta property="og:title" content="Contribute to Everyone Flies">
+<meta property="og:description" content="Gifts of any size help young people fly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Plan: a deep navy and royal blue base on warm cream, in scuba-suit colours: red, tennis-ball yellow and royal blue on navy. One bold move: huge condensed type, a rising-wind texture in the hero, and a full-screen finale over clouds. */
+:root{
+  --navy:#0B1F4D;
+  --blue:#1F3BD6;
+  --red:#E8202E;
+  --tennis:#D7F533;
+  --cream:#FFF4E0;
+  --muted:#46557F;
+  --on-navy:rgba(255,244,224,.88);
+  --display:'Big Shoulders Display','Anton','Oswald',Impact,'Arial Narrow',sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;background:var(--navy)}
+body{background:var(--cream);color:var(--navy);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tennis);outline-offset:3px}
+section[id]{scroll-margin-top:64px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:max(16px,4vw)}
+.mono{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.92;text-wrap:balance}
+h2{font-size:clamp(2.5rem,6.4vw,5.6rem);letter-spacing:.005em}
+h3{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1}
+p{max-width:62ch}
+.band{padding-block:clamp(64px,10vw,140px)}
+.eyebrow{display:block;margin-bottom:20px}
+
+/* section colours */
+.on-blue{background:var(--blue);color:var(--cream)}
+.on-navy{background:var(--navy);color:var(--cream)}
+.on-blue p,.on-navy p{color:var(--on-navy)}
+
+/* buttons */
+.btn{display:inline-block;font-family:var(--mono);font-weight:500;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border:2px solid currentColor;transition:transform .15s ease,background .15s ease,color .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-fill{background:var(--red);border-color:var(--red);color:#fff}
+.btn-fill:hover{background:var(--cream);border-color:var(--cream);color:var(--navy)}
+.btn-navy{background:var(--navy);border-color:var(--navy);color:var(--cream)}
+.btn-navy:hover{background:var(--blue);border-color:var(--blue)}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:rgba(11,31,77,.95);backdrop-filter:blur(8px);color:var(--cream)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-family:var(--display);font-weight:900;font-size:1.5rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none}
+.logo b{color:var(--tennis);font-weight:900}
+.bar nav{display:none;gap:24px}
+.bar nav a{text-decoration:none;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.bar nav a:hover{opacity:1;color:var(--tennis)}
+.bar .btn{padding:9px 16px;font-size:.74rem}
+@media(min-width:960px){.bar nav{display:flex}}
+
+/* hero */
+.hero{position:relative;background:var(--navy);color:var(--cream);overflow:hidden;padding-block:clamp(48px,8vw,120px) clamp(72px,9vw,128px)}
+.hero-bg{position:absolute;inset:0;background:url("flyer.jpg") center 28%/cover no-repeat;transform:scaleX(-1)}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,31,77,.96) 0,rgba(11,31,77,.88) 38%,rgba(11,31,77,.3) 68%,rgba(11,31,77,.06) 100%)}
+.hero .wrap{position:relative}
+.hero .copy{max-width:760px}
+.hero h1{font-size:clamp(4.4rem,22vw,7.5rem);letter-spacing:.005em}
+.hero h1 span{display:block}
+.hero h1 .fl{color:var(--tennis)}
+.hero .lede{font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.55;margin-top:28px;color:var(--cream)}
+.hero .when{margin-top:26px;color:var(--tennis)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .cta .btn-line{color:var(--cream)}
+.hero .cta .btn-line:hover{background:var(--cream);color:var(--navy)}
+.hero .credit{position:absolute;right:max(16px,4vw);bottom:18px;color:rgba(255,244,224,.8);font-size:.68rem;text-align:right}
+@media(min-width:900px){.hero h1{font-size:clamp(6.2rem,12.5vw,12rem)}}
+@media(max-width:899px){
+  .hero{padding-top:calc(58vw + 24px)}
+  .hero-bg{background-size:100% auto;background-position:center top}
+  .hero-shade{background:linear-gradient(180deg,rgba(11,31,77,0) 0,rgba(11,31,77,0) 24vw,rgba(11,31,77,.9) 50vw,var(--navy) 62vw)}
+}
+
+/* the idea */
+.idea .top{display:grid;gap:36px}
+.idea h2{font-size:clamp(2.4rem,6vw,5.4rem)}
+.idea h2 em{font-style:normal;color:var(--navy);background:var(--tennis);padding:0 .1em}
+.idea .copy p+p{margin-top:18px}
+@media(min-width:900px){.idea .top{grid-template-columns:1.15fr .85fr;gap:64px;align-items:end}}
+.quote{margin-top:clamp(48px,7vw,88px);padding-top:clamp(28px,4vw,44px);border-top:3px solid var(--navy)}
+.quote q{display:block;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2.2rem,6vw,5rem);line-height:.95;quotes:none;max-width:20ch}
+.quote q::before,.quote q::after{content:""}
+.quote p{margin-top:22px;color:var(--navy);font-size:1.15rem;max-width:64ch}
+.stats{display:grid;gap:34px;margin-top:clamp(48px,7vw,88px)}
+.stat b{display:block;font-family:var(--display);font-weight:900;font-size:clamp(4.4rem,11vw,8.6rem);line-height:.85;color:var(--blue)}
+.stat p{margin-top:12px;color:var(--muted);max-width:30ch}
+.stat a{color:var(--navy)}
+@media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr);gap:44px}}
+
+/* the sport */
+.sport .top{display:grid;gap:32px}
+.sport h2{max-width:11ch}
+.sport .eyebrow{color:var(--cream)}
+.sport .copy p{font-size:1.12rem}
+.sport .copy p+p{margin-top:18px}
+@media(min-width:900px){.sport .top{grid-template-columns:1fr 1fr;gap:64px;align-items:end}}
+.facts{display:grid;gap:30px;margin-top:clamp(40px,6vw,72px)}
+.fact{border-top:4px solid var(--tennis);padding-top:20px}
+.fact h3{margin-bottom:10px}
+@media(min-width:800px){.facts{grid-template-columns:repeat(3,1fr);gap:44px}}
+
+/* the day */
+.day h2{max-width:14ch}
+.day .eyebrow{color:var(--tennis)}
+.steps{display:grid;gap:16px;margin-top:clamp(36px,5vw,64px);list-style:none;padding:0}
+.steps li{background:var(--cream);color:var(--navy);padding:26px 24px 30px;border-top:6px solid var(--tennis)}
+.steps li .mono{color:var(--muted);display:block;margin-bottom:12px}
+.steps h3{margin-bottom:12px}
+.steps p{font-size:1rem;line-height:1.55;color:var(--navy)}
+@media(min-width:700px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.steps{grid-template-columns:repeat(5,1fr)}}
+
+/* why */
+.why h2{max-width:13ch}
+.why .label{color:var(--muted)}
+.reasons{display:grid;gap:40px 56px;margin-top:clamp(36px,5vw,64px)}
+.reasons div{border-top:6px solid var(--blue);padding-top:20px}
+.reasons h3{margin-bottom:12px}
+.reasons a{text-underline-offset:3px}
+@media(min-width:800px){.reasons{grid-template-columns:repeat(2,1fr)}}
+
+/* safety */
+.safety h2{max-width:16ch}
+.safety h2 em{font-style:normal;color:var(--tennis)}
+.safety .eyebrow{color:var(--cream)}
+.checks{display:grid;gap:22px 56px;margin-top:clamp(36px,5vw,64px);list-style:none;padding:0}
+.checks li{position:relative;padding-left:34px;color:var(--on-navy)}
+.checks li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;background:var(--tennis)}
+.checks b{color:var(--cream)}
+@media(min-width:800px){.checks{grid-template-columns:repeat(2,1fr)}}
+
+/* people */
+.crew .label,.partners .label{color:var(--muted)}
+.council .label{color:var(--tennis)}
+.people{display:grid;gap:20px;margin-top:clamp(36px,5vw,64px)}
+.person{display:grid;grid-template-columns:96px 1fr;gap:22px;background:var(--navy);color:var(--cream);padding:26px}
+.person p{color:var(--on-navy)}
+.person .mark{width:96px;height:96px;display:grid;place-items:center;background:var(--tennis);color:var(--navy);font-family:var(--display);font-weight:900;font-size:2.4rem;line-height:1}
+.person h3{font-size:clamp(1.6rem,2.4vw,2rem);margin-bottom:2px}
+.person .role{color:var(--tennis);display:block;margin-bottom:12px}
+.person p{font-size:.98rem;line-height:1.58}
+.person a{text-underline-offset:3px}
+.council .person{background:var(--cream);color:var(--navy)}
+.council .person p{color:var(--navy)}
+.council .person .role{color:var(--blue)}
+.person.open{background:transparent;border:3px dashed currentColor;color:var(--navy)}
+.person.open p{color:var(--navy)}
+.person.open .mark{background:transparent;border:3px dashed currentColor;color:inherit}
+.person.open .role{color:var(--muted)}
+.council .person.open{background:transparent;color:var(--cream)}
+.council .person.open p{color:var(--on-navy)}
+.council .person.open .role{color:var(--tennis)}
+@media(min-width:900px){.people{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.person{grid-template-columns:1fr}}
+
+/* partners */
+.onboard{display:grid;gap:20px;margin-top:clamp(36px,5vw,64px)}
+.partner{background:var(--navy);color:var(--cream);padding:30px 28px 34px}
+.partner h3{font-size:clamp(2.2rem,4vw,3.2rem);color:var(--tennis);margin-bottom:12px}
+.partner p{color:var(--on-navy);font-size:1rem}
+.logo-tile{display:grid;place-items:center;background:#fff;height:170px;padding:18px 24px;margin-bottom:24px}
+.logo-tile img{max-height:132px;max-width:100%;width:auto;height:auto}
+@media(min-width:800px){.onboard{grid-template-columns:repeat(2,1fr)}}
+.tbd{display:grid;place-items:center;text-align:center;border:3px dashed var(--navy);padding:28px 20px;min-height:150px;color:var(--navy)}
+.tbd .mono{max-width:20ch;line-height:1.5}
+.tbd.big{min-height:230px;margin-top:20px;background:rgba(31,59,214,.09)}
+.tbd.big strong{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(2rem,4vw,3.2rem);line-height:1;display:block;margin-bottom:8px}
+.slots{display:grid;gap:20px;margin-top:20px}
+@media(min-width:700px){.slots{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.slots{grid-template-columns:repeat(4,1fr)}}
+.partners .after{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:clamp(32px,4vw,52px)}
+
+/* join */
+.join h2{max-width:15ch}
+.join .eyebrow{color:var(--cream)}
+.ways{display:grid;gap:20px;margin-top:clamp(36px,5vw,64px)}
+.way{background:var(--navy);color:var(--cream);padding:30px 28px 34px}
+.way h3{color:var(--tennis);margin-bottom:12px}
+.way p{color:var(--on-navy);font-size:1rem}
+@media(min-width:900px){.ways{grid-template-columns:repeat(3,1fr)}}
+.contact{margin-top:clamp(32px,4vw,52px);font-size:1.15rem;font-weight:600;color:var(--cream)}
+.contact a{text-underline-offset:4px}
+
+/* finale */
+.finale{position:relative;background:var(--navy) url("clouds.jpg") center/cover no-repeat;color:#fff;display:grid;align-items:center;min-height:92vh;padding-block:clamp(72px,12vw,160px);overflow:hidden}
+.finale::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,31,77,.74),rgba(11,31,77,.6))}
+.finale .wrap{position:relative;width:100%}
+.finale h2{font-size:clamp(5rem,24vw,23rem);line-height:.96;letter-spacing:.005em}
+.finale h2 span{display:block}
+.finale h2 .fly{color:var(--tennis)}
+.finale p{margin-top:clamp(28px,4vw,48px);font-size:clamp(1.05rem,1.6vw,1.3rem);color:var(--cream);max-width:46ch}
+.finale .btn{margin-top:30px}
+
+/* footer */
+footer{background:var(--navy);color:rgba(255,244,224,.8);padding-block:clamp(96px,14vw,200px) clamp(40px,5vw,64px);font-size:.85rem}
+footer .wrap{display:grid;gap:clamp(96px,14vw,200px)}
+footer .logo{color:var(--cream);font-size:clamp(3.6rem,12vw,10rem);line-height:.9;letter-spacing:.01em}
+footer p{max-width:70ch;line-height:1.6}
+footer a{color:var(--cream);text-underline-offset:3px}
+
+/* contribute page */
+.chead{background:var(--navy);color:var(--cream);padding-block:clamp(56px,9vw,128px) clamp(56px,8vw,112px)}
+.chead h1{font-size:clamp(4.2rem,15vw,12rem);letter-spacing:.005em}
+.chead h1 span{display:block}
+.chead h1 .fl{color:var(--tennis)}
+.chead .lede{font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.55;margin-top:28px;color:var(--cream);max-width:48ch}
+.chead .eyebrow{color:var(--tennis)}
+.chead .cta{margin-top:34px}
+.gifts{display:grid;gap:18px;margin-top:clamp(36px,5vw,64px)}
+.gift{background:var(--navy);color:var(--cream);padding:30px 28px 34px;display:flex;flex-direction:column;gap:14px}
+.gift b{font-family:var(--display);font-weight:900;font-size:clamp(3.4rem,7vw,5.4rem);line-height:.9;color:var(--tennis)}
+.gift p{color:var(--on-navy);font-size:1.02rem}
+.gift.goal{background:var(--blue)}
+@media(min-width:860px){.gifts{grid-template-columns:repeat(3,1fr)}}
+.does .copy{display:grid;gap:22px;margin-top:clamp(28px,4vw,48px)}
+.does .copy p{font-size:1.15rem;max-width:66ch}
+.give h2{max-width:12ch}
+.give .intro{margin-top:24px;font-size:1.15rem}
+.bank{margin-top:clamp(32px,4vw,56px);display:grid;gap:22px}
+.rows{background:var(--navy);color:var(--cream);padding:8px 28px}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;padding:20px 0;border-bottom:1px solid rgba(255,244,224,.22)}
+.row:last-child{border-bottom:0}
+.row dt{font-family:var(--mono);font-weight:500;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tennis);flex:1 1 100%}
+.row dd{margin:0;font-size:clamp(1.15rem,2.4vw,1.6rem);font-weight:600;letter-spacing:.02em;overflow-wrap:anywhere;flex:1 1 auto}
+.copy-btn{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--cream);border:2px solid var(--cream);padding:8px 14px;cursor:pointer}
+.copy-btn:hover{background:var(--cream);color:var(--navy)}
+.soon{display:grid;gap:18px}
+@media(min-width:860px){.soon{grid-template-columns:1fr 1fr}}
+.soon .tbd{min-height:200px}
+.note{margin-top:clamp(28px,4vw,48px);padding:26px 28px;border-left:8px solid var(--blue);background:rgba(31,59,214,.08);font-size:1.08rem;max-width:72ch}
+.note a{text-underline-offset:3px}
+.csr h2{max-width:14ch}
+.csr .eyebrow{color:var(--cream)}
+.csr p{font-size:1.15rem;margin-top:24px;max-width:56ch;color:var(--cream)}
+.csr .btn{margin-top:30px}
+.csr .addr{display:block;margin-top:18px;font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="index.html">Everyone <b>Flies</b></a>
+    <nav aria-label="Sections">
+      <a href="index.html#sport">The sport</a>
+      <a href="index.html#day">The day</a>
+      <a href="index.html#safety">Safety</a>
+      <a href="index.html#crew">Ground Crew</a>
+      <a href="index.html#council">Flight Council</a>
+      <a href="index.html#partners">Partners</a>
+    </nav>
+    <a class="btn btn-fill" href="index.html#join">Get involved</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="chead">
+  <div class="wrap">
+    <span class="mono eyebrow">Contribute</span>
+    <h1><span>Launch 100 kids</span><span class="fl">into the air.</span></h1>
+    <p class="lede">Every gift, of any size, helps a young person fly in the wind tunnel on 3 December 2026.</p>
+    <div class="cta"><a class="btn btn-fill" href="#give">How to give</a></div>
+  </div>
+</section>
+
+<section class="does band">
+  <div class="wrap">
+    <span class="mono eyebrow label" style="color:var(--muted)">What your contribution does</span>
+    <h2>Your gift lifts a child into the air.</h2>
+    <div class="gifts">
+      <div class="gift"><b>₹5,000</b><p>covers one young flyer's whole day: their time in the tunnel with an instructor, their snacks, their place at the talks, their transport and doctor's check-up, and the chance to meet people who have done the impossible.</p></div>
+      <div class="gift"><b>₹50,000</b><p>sponsors a batch of ten flyers.</p></div>
+      <div class="gift goal"><b>₹5,00,000</b><p>is our goal, and it will let around 100 young people fly.</p></div>
+    </div>
+    <div class="copy">
+      <p>Gifts of any size help.</p>
+      <p>Funds are received and managed by our partner, Operation Blue Freedom Foundation, which works in adventure sports for people with disabilities. All the money raised goes to running Everyone Flies, and after the event we will share how the funds were spent, along with photos and stories from the day.</p>
+    </div>
+  </div>
+</section>
+
+<section class="give on-blue band" id="give">
+  <div class="wrap">
+    <span class="mono eyebrow">How to give</span>
+    <h2>Give by bank transfer or UPI.</h2>
+    <p class="intro">You can pay by bank transfer, or by scanning the QR code with any UPI app.</p>
+    <div class="bank">
+      <dl class="rows">
+        <div class="row"><dt>Account holder</dt><dd>Operation Blue Freedom Foundation</dd><button class="copy-btn" type="button" data-copy="Operation Blue Freedom Foundation">Copy</button></div>
+        <div class="row"><dt>Account number</dt><dd>50200051207996</dd><button class="copy-btn" type="button" data-copy="50200051207996">Copy</button></div>
+        <div class="row"><dt>IFSC</dt><dd>HDFC0000003</dd><button class="copy-btn" type="button" data-copy="HDFC0000003">Copy</button></div>
+        <div class="row"><dt>Bank and branch</dt><dd>HDFC Bank, K G Marg</dd></div>
+        <div class="row"><dt>Account type</dt><dd>Current account</dd></div>
+      </dl>
+      <div class="soon">
+        <div class="tbd" style="border-color:var(--cream);color:var(--cream)"><span class="mono">UPI ID to come</span></div>
+        <div class="tbd" style="border-color:var(--cream);color:var(--cream)"><span class="mono">QR code to come</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="after-pay band" style="padding-block:clamp(48px,7vw,96px)">
+  <div class="wrap">
+    <div class="note" style="margin-top:0">
+      <p style="max-width:none">Please write EVERYONE FLIES in the payment note. Then email your name, the amount and a screenshot of the payment to <a href="mailto:operationbluefreedom@gmail.com">operationbluefreedom@gmail.com</a> and <a href="mailto:flying@proj-neptune.com">flying@proj-neptune.com</a>, so that we can thank you and send an acknowledgement.</p>
+      <p style="max-width:none;margin-top:16px">Donations are eligible for tax deduction under Section 80G, and we will send your receipt by email.</p>
+    </div>
+  </div>
+</section>
+
+<section class="csr on-navy band" id="companies">
+  <div class="wrap">
+    <span class="mono eyebrow">Companies and CSR teams</span>
+    <h2>Sponsor a batch of flyers.</h2>
+    <p>If your company would like to sponsor a batch of flyers or support the programme through CSR, please write to us at flying@proj-neptune.com. Operation Blue Freedom Foundation can accept CSR contributions, and they also qualify for the 80G tax deduction.</p>
+    <a class="btn btn-fill" href="mailto:flying@proj-neptune.com?subject=Everyone%20Flies%20CSR%20and%20sponsorship">Write to us</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="index.html">Everyone <b>Flies</b></a>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy');
+    navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)}).catch(function(){b.textContent='Select and copy'});
+  });
+});
+</script>
+</body>
+</html>
